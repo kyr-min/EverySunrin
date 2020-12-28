@@ -1,5 +1,16 @@
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define('user', {
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        user_nick: {
+            type: DataTypes.STRING(20),
+            allowNull: false,
+            unique: true,
+        },
         user_id: {
             type: DataTypes.STRING(20),
             allowNull: false,
@@ -22,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
         deletedAt: {
             type: DataTypes.DATE,
             allowNull: true,
-            defaultValue: NULL,
+            defaultValue: '\0',
         },
     }, {
         timestamps: false,
