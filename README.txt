@@ -9,3 +9,4 @@ npm
  - nodemon (npm i nodemon)
  - passport (npm i passport)
  - passport-local (npm i passport-local)
+ - bcrypt (npm i bcrypt)

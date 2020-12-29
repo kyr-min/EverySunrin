@@ -1,4 +1,4 @@
-const local = reuqire('./localStrategy');
+const local = require('./localStrategy');
 const { User } = require('../models');
 
 module.exports = (passport) => {
@@ -13,4 +13,5 @@ module.exports = (passport) => {
     });
 
     local(passport);
+    
 }
