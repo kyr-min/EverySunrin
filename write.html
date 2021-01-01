@@ -3,41 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>EverySchool</title>
-    <style>
-        @font-face {
-            font-family: apple_gothic;
-            src: url("./font/apple_sd_gothic_neo_r.ttf");
-        }
-        p{
-            font-family: apple_gothic;
-        }
-        input{
-            width: 80%;
-        }
-        #context{
-            border: 1px solid gray;
-            text-align: center;            
-            margin: auto;
-            width: 50%;
-            padding: 1%;
-            display: flex;
-            flex-direction: row;
-        }
-        .main{
-            background: #f5f5f5;
-            display: flex;
-            flex-direction: column;
-        }
-    </style>
+    <link rel="stylesheet" tpye="text/css" href="./css/write.css">
 </head>
 <body>
-    <form>
-        <div id="context" class="main"> 
-            <p>제목</p>
-            <input type="text">
-        </div>
-        <div id="footer" class="main">
+    <form id = "write">
+    
+        <div id="input_title" class="setting">        
+            <input type="text" placeholder="제목">
+         </div>
 
+        <div id="editor" class="main">
+
+            <div id= "sidebar" class="setting">
+                <P>사진</P>
+            </div>
+            <div id= "editor" class="setting">
+                <textarea cols="50" rows="10"></textarea>
+            </div>
+        </div>
+
+        <div id= "send" class="setting">
+            <button type="button">취소</button>
+            <button type="button">등록</button>
         </div>
     </form>
 </body>
