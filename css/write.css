@@ -6,47 +6,59 @@
     font-family: apple_gothic;
     
 }
-input{
-    width: 100%;
-    font-size: 25px;
-    padding: 1%;
-}
-textarea{
-    width: 100%;
-    height: 100%;
-    resize: none;
-    font-size: 25px;
-    padding: 2%;
-}
-fieldset{
-    border: 0px;
-}
 
-#write{
-    padding: 5%;
+form{
+    width: 1100px;
     border: 1px solid gray; 
     background: #f5f5f5;
     display: flex;
     flex-direction: column;
+    position:absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    
+}
+input{
+    display: flex;
+
+    width: 702px;
+    font-size: 15px;
+    padding: 1%;
+}
+
+fieldset{
+    border: 0px;
 }
 
 #editor{
+    width: 702px;
+}
+
+#edit{
     height: 60%;
-    padding-top: 0%;
 }
 
 #sidebar{
-    height: 1%;
-    padding-top: 0%;
-    padding-bottom: 0%;
+    height: min-content;
+    padding: 0%;
+    margin-bottom: 0px;
 }
 
-
+.editor__editable, main .ck-editor[role='application'] .ck.ck-content, .ck.editor__editable[role='textbox'], .ck.ck-editor__editable[role='textbox'], .ck.editor[role='textbox'] {
+    height: 400px;
+    width: 702px;
+    background: #fff;
+    font-size: 1em;
+    line-height: 1.6em;
+    min-height: var(--ck-sample-editor-min-height);
+    padding: 1.0em 1em;
+}
 .setting{
-    text-align: center;            
-    margin: auto;
-    width: 90%;
-    padding: 1%;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    flex-direction: row;           
+    margin: 5px;
+    padding: 15px;
+    
+    
 }

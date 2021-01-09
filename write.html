@@ -3,23 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <title>EverySchool</title>
-    <link rel="stylesheet" tpye="text/css" href="./css/write.css">
+    <link rel="stylesheet" type="text/css" href="./css/write.css">
+    <script type="text/javascript" src="./ckeditor5/build/ckeditor.js"></script>
 </head>
 <body>
     <form id = "write">
     
         <div id="input_title" class="setting">        
-            <input type="text" placeholder="제목">
+            <input type="text" placeholder="제목을 입력해주세요">
          </div>
 
-        <div id="editor" class="main">
-
-            <div id= "sidebar" class="setting">
-                <P>사진</P>
-            </div>
-            <div id= "editor" class="setting">
-                <textarea cols="50" rows="10"></textarea>
-            </div>
+        <div id="edit" class="setting">
+            <textarea name="content" class="editor"></textarea>
+            <script>ClassicEditor
+                .create( document.querySelector( '.editor' ), {
+                    
+                    toolbar: {
+                        items: [
+                            'heading',
+                            '|',
+                            'bold',
+                            'italic',
+                            'link',
+                            'bulletedList',
+                            'numberedList',
+                            '|',
+                            'indent',
+                            'outdent',
+                            '|',
+                            'blockQuote',
+                            'insertTable',
+                            'undo',
+                            'redo'
+                        ]
+                    },
+                    language: 'ko',
+                    image: {
+                        toolbar: [
+                            'imageTextAlternative',
+                            'imageStyle:full',
+                            'imageStyle:side'
+                        ]
+                    },
+                    table: {
+                        contentToolbar: [
+                            'tableColumn',
+                            'tableRow',
+                            'mergeTableCells'
+                        ]
+                    },
+                    licenseKey: '',
+                    
+                } )
+                .then( editor => {
+                    window.editor = editor;                    
+                } )
+                .catch( error => {
+                    console.error( 'Oops, something went wrong!' );
+                    console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+                    console.warn( 'Build id: 2lp7tmavnqhn-ltg3fnvn6ys1' );
+                    console.error( error );
+                } );
+        </script>
         </div>
 
         <div id= "send" class="setting">
