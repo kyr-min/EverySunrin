@@ -1,0 +1,64 @@
+@font-face {
+    font-family: apple_gothic;
+    src: url("./font/apple_sd_gothic_neo_r.ttf");
+}
+*{
+    font-family: apple_gothic;
+    
+}
+
+form{
+    width: 1100px;
+    border: 1px solid gray; 
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    top:50%; left:50%;
+    transform: translate(-50%, -50%);
+    
+}
+input{
+    display: flex;
+
+    width: 702px;
+    font-size: 15px;
+    padding: 1%;
+}
+
+fieldset{
+    border: 0px;
+}
+
+#editor{
+    width: 702px;
+}
+
+#edit{
+    height: 60%;
+}
+
+#sidebar{
+    height: min-content;
+    padding: 0%;
+    margin-bottom: 0px;
+}
+
+.editor__editable, main .ck-editor[role='application'] .ck.ck-content, .ck.editor__editable[role='textbox'], .ck.ck-editor__editable[role='textbox'], .ck.editor[role='textbox'] {
+    height: 400px;
+    width: 702px;
+    background: #fff;
+    font-size: 1em;
+    line-height: 1.6em;
+    min-height: var(--ck-sample-editor-min-height);
+    padding: 1.0em 1em;
+}
+.setting{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;           
+    margin: 5px;
+    padding: 15px;
+    
+    
+}

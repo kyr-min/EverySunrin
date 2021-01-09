@@ -5,15 +5,21 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var flash = require('connect-flash');
+var passport = require('passport');
 require('dotenv').config();
 
 var mainRouter = require('./routes/main');
 var loginRouter = require('./routes/login');
 var registerRouter = require('./routes/register');
-var sequelize = require('./models').sequelize;
+var profileRouter = require('./routes/profile');
+var postRouter = require('./routes/post');
+
+const { sequelize }  = require('./models');
+const passportConfig = require('./passport');
 
 var app = express();
 sequelize.sync();
+passportConfig(passport);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,23 +40,14 @@ app.use(session({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.use('/', mainRouter);
-app.use('/users', loginRouter);
+app.use('/', loginRouter);
+app.use('/main', mainRouter);
 app.use('/register', registerRouter);
-
-
-
-
-
-
-
-
-
-
-
-
-
+app.use('/profile', profileRouter);
+app.use('/post', postRouter);
 
 
 

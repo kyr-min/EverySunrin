@@ -1,5 +1,15 @@
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define('post', {
+        post_no: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        writer_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         content: {
             type: DataTypes.TEXT,
             allowNull: false,
@@ -27,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
         deletedAt: {
             type: DataTypes.DATE,
             allowNull: true,
-            defaultValue: NULL,
+            defaultValue: '\0',
         }
     }, {
         timestamps: false,
